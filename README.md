@@ -2,7 +2,7 @@
 
 Punto de venta conectado a un PAC **simulado**: cada venta se factura electrónicamente al cobrar, sin digitar dos veces, y el dueño ve al instante si ya pasó el tope del facturador gratuito de la DGI.
 
-- Publicada en Vercel: https://factura-sola-demo.vercel.app (el subdominio previsto, `factura.panacealogic.dev`, todavía no está apuntado)
+- Publicada en https://factura.panacealogic.dev (Vercel; también en https://factura-sola-demo.vercel.app). El DNS está en name.com: CNAME `factura` hacia el valor que da Vercel
 - Código: repositorio privado `dany2509D/factura-sola-demo` en GitHub
 - Negocios ficticios (con selector): Ferretería El Tornillo (mostrador), Café La Ceiba (restaurante) y Tienda Brisa (tienda en línea)
 - Es un sitio estático: HTML, CSS y JavaScript sin build, sin dependencias y sin backend. Todo vive en el navegador (`localStorage`, con respaldo en memoria).
@@ -24,7 +24,7 @@ También sirve cualquier servidor estático apuntando a la carpeta `public/`. Lo
 ## Cómo desplegarlo
 
 1. Publique la carpeta **`public/`** tal cual en cualquier hosting estático (no hay paso de compilación ni variables de entorno). En Vercel ya está resuelto con `vercel.json` (`outputDirectory: "public"`, sin build): `npx vercel deploy --prod` publica solo `public/`; `docs/`, `tests/` y este README no se sirven.
-2. Apunte el subdominio `factura.panacealogic.dev` al hosting y active HTTPS (lo da el hosting).
+2. Apunte el subdominio `factura.panacealogic.dev` al hosting y active HTTPS (lo da el hosting). Ya hecho: dominio agregado al proyecto de Vercel y CNAME creado en name.com.
 3. Navegación por hash (`#/ruta`): no necesita reglas de reescritura.
 
 Esta demo **no usa IA ni el endpoint `/api/chat`**: no tiene chat. Por eso no hay función serverless ni clave de API.
