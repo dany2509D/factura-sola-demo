@@ -39,10 +39,9 @@ export const ETIQUETA_TIPO = { factura: 'FAC', nota_credito: 'NC', nota_debito: 
 export const INTERVALO_VIVO_DEFECTO = 120;
 export const INTERVALOS_VIVO = [15, 30, 60, 120, 300];
 
-/** Contacto de Panacea (FAC-RF-16). */
+/** Contacto (FAC-RF-16). */
 export const CONTACTO = {
   whatsapp: 'https://wa.me/50766632666?text=' + encodeURIComponent('Hola, vi la demo Factura sola y quiero un diagnóstico'),
-  formulario: 'https://panacealogic.dev/cuentanos-tu-proyecto?demo=factura',
 };
 
 /** VALIDAR CON LA FICHA TÉCNICA DE LA DGI: ventana de fechas que acepta el PAC simulado (días hacia atrás y adelante). */
@@ -111,5 +110,5 @@ export const SIMULACIONES = [
 /** Tiempos de la animación del PAC simulado (ms). Suman menos de 3 s. */
 export const TIEMPOS = { aEnviada: 650, aResultado: 1100, entreCola: 450 };
 
-export const STORAGE_KEY = 'panacea.factura-sola.v1';
+export const STORAGE_KEY = 'factura-sola.v1';
 export const VERSION_DATOS = 3; // súbalo cuando cambie la semilla: obliga a recargar los datos de ejemplo

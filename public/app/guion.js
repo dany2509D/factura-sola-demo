@@ -49,7 +49,7 @@ export function crearGuion() {
       },
       {
         title: 'Si lo supera…',
-        note: 'Con B/.41,500 y 118 documentos pasa a rojo: "Debe emitir mediante un PAC o un sistema certificado". Aquí entra Panacea.',
+        note: 'Con B/.41,500 y 118 documentos pasa a rojo: "Debe emitir mediante un PAC o un sistema certificado". Aquí entra el PAC.',
         highlight: ['.veredicto'], dwell: 6000,
         run: paso(async () => { await irA('#/'); C.fijarMedidor({ ventasAnio: EJEMPLO.pasado.ventasAnio, docsMes: EJEMPLO.pasado.docsMes }); }),
       },

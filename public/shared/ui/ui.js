@@ -1,24 +1,16 @@
 // Componentes de interfaz compartidos: banner de demo, avisos (toast) y diálogos.
 import { h, $, clear } from './dom.js';
 
-export const LINKS = {
-  site: 'https://panacealogic.dev',
-  diagnostico: 'https://panacealogic.dev/cuentanos-tu-proyecto',
-};
-
 /**
  * Banner fijo arriba. Publica su alto en --banner-h para que el resto lo respete.
- * Con `whatsapp` el botón principal abre WhatsApp con el mensaje ya escrito, y `formulario` queda
- * como alternativa; sin ellos el botón lleva al formulario general.
+ * Con `whatsapp` el botón principal abre WhatsApp con el mensaje ya escrito.
  */
-export function mountBanner(container, { whatsapp, formulario } = {}) {
+export function mountBanner(container, { whatsapp } = {}) {
   const banner = h('div', { class: 'demo-banner', role: 'region', 'aria-label': 'Aviso de demostración' },
     h('p', { class: 'demo-banner__text' },
-      'Demo de ', h('a', { href: LINKS.site, target: '_blank', rel: 'noopener' }, 'Panacea Logic AI'),
-      ' · Datos ficticios · No ingrese información real'),
-    h('a', { class: 'demo-banner__cta', href: whatsapp || formulario || LINKS.diagnostico, target: '_blank', rel: 'noopener' },
-      whatsapp ? 'Agende un diagnóstico gratis por WhatsApp' : 'Agende un diagnóstico gratis de 30 minutos'),
-    whatsapp && formulario ? h('a', { class: 'demo-banner__alt', href: formulario, target: '_blank', rel: 'noopener' }, 'o escríbanos en el formulario') : null);
+      'Demo · Datos ficticios · No ingrese información real'),
+    h('a', { class: 'demo-banner__cta', href: whatsapp, target: '_blank', rel: 'noopener' },
+      'Agende un diagnóstico gratis por WhatsApp'));
   container.append(banner);
   const sync = () => document.documentElement.style.setProperty('--banner-h', `${banner.offsetHeight}px`);
   sync();

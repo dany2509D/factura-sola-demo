@@ -4,10 +4,10 @@ Versión 1.2 · 10 de noviembre de 2026 · incluye la revisión de la demo const
 
 | Campo | Valor |
 | --- | --- |
-| Subdominio | factura.panacealogic.dev |
+| Subdominio | factura-sola-demo.vercel.app |
 | Prefijo | FAC |
 | Marcas ficticias | Ferretería El Tornillo (mostrador) · Café La Ceiba (restaurante) · Tienda Brisa (tienda en línea) |
-| Producto de Panacea | Facturación electrónica en Panamá (conexión de punto de venta, ERP o tienda con un PAC) |
+| Producto | Facturación electrónica en Panamá (conexión de punto de venta, ERP o tienda con un PAC) |
 | Prospectos | Todos; en especial Casa de Materiales N.G. No. 3, restaurantes, Colegio de Contadores y firmas contables |
 | Orden de construcción | 2 |
 | Depende de | 00-base-comun.md |
@@ -35,7 +35,7 @@ Que el dueño vea que cada venta se factura electrónicamente al cobrar, sin dig
 | Dueño | Medidor y panel | Ve el tope y las ventas |
 | Contador | Panel `#/admin` | Revisa ITBMS, rechazos, notas y exporta |
 | Comprador | Comprobante | Recibe el CAFE por WhatsApp o correo |
-| Vendedor de Panacea | Controles de la demo | Presenta, pone las cifras del prospecto y enciende o apaga la actividad en vivo |
+| Vendedor | Controles de la demo | Presenta, pone las cifras del prospecto y enciende o apaga la actividad en vivo |
 
 ## 4. Requerimientos funcionales
 
@@ -56,7 +56,7 @@ Que el dueño vea que cada venta se factura electrónicamente al cobrar, sin dig
 | FAC-RF-13 | Numeración consecutiva propia por punto de facturación y por tipo de documento (factura, nota de crédito, nota de débito). La tienda en línea es su propio punto (WEB). En listas y comprobantes el número siempre va con su tipo, por ejemplo "NC · PF1-000002". Regla exacta de numeración: validar con la ficha técnica de la DGI. | Must |
 | FAC-RF-14 | Interruptor "Actividad en vivo" en los controles de la demo: genera ventas de mostrador y pedidos de la tienda a intervalos configurables (por defecto, uno cada 2 minutos). Apagado por defecto fuera del modo presentación. | Must |
 | FAC-RF-15 | Teléfono de WhatsApp opcional en el cliente; si falta al pulsar "WhatsApp", se pide en ese momento. Nunca se muestra un número de relleno. | Should |
-| FAC-RF-16 | Botón de contacto de la barra superior: abre WhatsApp +507 6663-2666 con el mensaje "Hola, vi la demo Factura sola y quiero un diagnóstico", o el formulario de panacealogic.dev con la demo ya indicada (`?demo=factura`). | Should |
+| FAC-RF-16 | Botón de contacto de la barra superior: abre WhatsApp +507 6663-2666 con el mensaje "Hola, vi la demo Factura sola y quiero un diagnóstico". | Should |
 | FAC-RF-17 | Modo restaurante para Café La Ceiba: mesas o cuentas abiertas, propina y división de cuenta. El tratamiento de la propina en la factura electrónica queda configurable y anotado como "validar con la ficha técnica de la DGI". | Should |
 
 ## 5. Requerimientos no funcionales específicos
@@ -91,7 +91,7 @@ Que el dueño vea que cada venta se factura electrónicamente al cobrar, sin dig
 | ID | Historia | Criterios de aceptación | Prior. | Tam. |
 | --- | --- | --- | --- | --- |
 | FAC-HU1.1 | Como dueño quiero saber si pasé el tope del facturador gratuito, para entender si tengo que migrar. | Dos barras con los límites de B/.36,000 al año y 100 documentos al mes; amarillo desde 80%, rojo al superar con el texto "Debe emitir mediante un PAC o un sistema certificado". | Must | M |
-| FAC-HU1.2 | Como vendedor de Panacea quiero poner las cifras del prospecto, para hacer el ejercicio en la reunión. | Campos editables que actualizan las barras al instante; botón para volver a los datos de la demo. **Las cifras escritas no cambian aunque la demo emita documentos; una etiqueta "Cifras del prospecto" lo indica.** | Must | S |
+| FAC-HU1.2 | Como vendedor quiero poner las cifras del prospecto, para hacer el ejercicio en la reunión. | Campos editables que actualizan las barras al instante; botón para volver a los datos de la demo. **Las cifras escritas no cambian aunque la demo emita documentos; una etiqueta "Cifras del prospecto" lo indica.** | Must | S |
 
 ### FAC-EP2 Venta y emisión
 
@@ -122,7 +122,7 @@ Que el dueño vea que cada venta se factura electrónicamente al cobrar, sin dig
 
 | ID | Historia | Criterios de aceptación | Prior. | Tam. |
 | --- | --- | --- | --- | --- |
-| FAC-HU5.1 | Como vendedor de Panacea quiero decidir cuándo la demo "se mueve sola", para que no me interrumpa mientras explico. | Interruptor "Actividad en vivo" (FAC-RF-14); con él apagado no aparecen ventas ni avisos que el vendedor no generó. El modo presentación lo enciende y lo apaga al salir. | Must | S |
+| FAC-HU5.1 | Como vendedor quiero decidir cuándo la demo "se mueve sola", para que no me interrumpa mientras explico. | Interruptor "Actividad en vivo" (FAC-RF-14); con él apagado no aparecen ventas ni avisos que el vendedor no generó. El modo presentación lo enciende y lo apaga al salir. | Must | S |
 | FAC-HU5.2 | Como vendedor quiero que los avisos no tapen la tarjeta de la presentación. | Los avisos emergentes se colocan arriba o a un lado mientras la presentación está abierta. | Could | S |
 | FAC-HU5.3 | Como prospecto quiero pedir el diagnóstico desde la demo en un toque. | Botón de contacto según FAC-RF-16. | Should | S |
 
@@ -191,7 +191,7 @@ Se recorrió la versión local (`localhost:5174`) en escritorio de 1366 × 768 y
 
 ```
 ┌───────────────────────────────────────────────────────────────────┐
-│ Banner de demo (capa Panacea)                                     │
+│ Banner de demo (capa de demo)                                     │
 ├──────────────┬────────────────────────────────────────────────────┤
 │ Menú lateral │ [logo] Ferretería El Tornillo                      │
 │              │                                                    │

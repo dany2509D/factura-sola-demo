@@ -25,10 +25,10 @@ C.alAvisar((msg, kind) => toast(msg, { kind }));
 // ------------------------------------------------------------------ estructura
 
 const shell = $('#shell');
-mountBanner($('#banner-root'), { whatsapp: CONTACTO.whatsapp, formulario: CONTACTO.formulario });
+mountBanner($('#banner-root'), { whatsapp: CONTACTO.whatsapp });
 
 const estadoPill = h('p', { class: 'estado-conexion', role: 'status' });
-const marcaRail = h('a', { class: 'marca', href: '#/', 'aria-label': 'Factura sola, inicio' }, logoApp(34), h('span', null, h('strong', null, 'Factura sola'), h('small', null, 'Demo de Panacea Logic AI')));
+const marcaRail = h('a', { class: 'marca', href: '#/', 'aria-label': 'Factura sola, inicio' }, logoApp(34), h('span', null, h('strong', null, 'Factura sola'), h('small', null, 'Demo')));
 const insigniaVista = h('p', { class: 'rail__vista', hidden: true }, 'Vista de administrador');
 const railNegocios = h('div', { class: 'rail__negocios', role: 'group', 'aria-label': 'Negocio de la demo' });
 const railNav = h('nav', { class: 'rail__nav', 'aria-label': 'Secciones' });
@@ -96,7 +96,7 @@ function enrutar() {
   limpiar = vista();
   animarEntrada(main);
   document.body.dataset.vista = r.admin ? 'admin' : 'cliente';
-  document.title = `${r.titulo} · Factura sola · Demo de Panacea Logic AI`;
+  document.title = `${r.titulo} · Factura sola · Demo`;
   pintaNav();
   if (!primera) { window.scrollTo({ top: 0 }); if (!document.body.classList.contains('is-presenting')) main.focus({ preventScroll: true }); }
   primera = false;

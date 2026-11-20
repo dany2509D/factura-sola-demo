@@ -1,4 +1,4 @@
-# 00 · Base común de las demos — Panacea Logic AI
+# 00 · Base común de las demos
 
 Versión 1.0 · 10 de noviembre de 2026 · Aplica a las demos 01 a 10.
 
@@ -18,7 +18,7 @@ Las demos son herramientas de venta para reuniones con MiPyMEs panameñas, no pr
 | BASE-RNF-01 | Sitio estático de una sola página (HTML, CSS y JavaScript; Vite sin framework si hacen falta módulos), navegación por hash (`#/ruta`), sin backend obligatorio. | El build se sirve desde cualquier hosting estático. |
 | BASE-RNF-02 | Persistencia en `localStorage`; cada lectura y escritura dentro de `try/catch`, con respaldo en memoria. | Con `localStorage` bloqueado, el flujo principal se completa. |
 | BASE-RNF-03 | Datos semilla realistas cargados la primera vez y botón visible "Reiniciar demo". | Reiniciar deja exactamente el estado semilla. |
-| BASE-RNF-04 | Banner fijo: "Demo de Panacea Logic AI · Datos ficticios · No ingrese información real", con enlaces a panacealogic.dev y a panacealogic.dev/cuentanos-tu-proyecto. | Visible en todas las rutas, también en `#/admin`. |
+| BASE-RNF-04 | Banner fijo: "Demo · Datos ficticios · No ingrese información real". | Visible en todas las rutas, también en `#/admin`. |
 | BASE-RNF-05 | Marca inventada (nombre, logo SVG, paleta). Personas, teléfonos (+507 6000-0000) y cédulas ficticios. Ningún nombre, logo ni dato de empresa real. | Revisión de textos antes de publicar. |
 | BASE-RNF-06 | Español de Panamá, trato de "usted". Una sola notación de moneda (US$ o B/.) en toda la demo. ITBMS 7% donde aplique. | Revisión de textos. |
 | BASE-RNF-07 | Pagos solo simulados (Yappy, tarjeta, ACH, efectivo). | No hay llamadas a pasarelas reales. |
@@ -30,7 +30,7 @@ Las demos son herramientas de venta para reuniones con MiPyMEs panameñas, no pr
 | BASE-RNF-13 | Humano en el ciclo: texto "Una persona del equipo revisa los casos importantes" y botón "Pasar a una persona" en todo chat. | La conversación aparece marcada en el panel. |
 | BASE-RNF-14 | Privacidad: ningún formulario pide datos sensibles reales; aviso de datos ficticios en cada formulario. | Revisión de formularios. |
 | BASE-RNF-15 | Navegadores: Chrome, Edge, Firefox y Safari iOS en sus dos últimas versiones. | Prueba manual del flujo principal. |
-| BASE-RNF-16 | Despliegue en su subdominio `*.panacealogic.dev` con HTTPS. | URL pública funcionando. |
+| BASE-RNF-16 | Despliegue en su propio subdominio con HTTPS. | URL pública funcionando. |
 | BASE-RNF-17 | Zona horaria `America/Panama` en todas las fechas y horas. | Las horas del panel coinciden con la hora local. |
 
 ## Arquitectura sugerida
@@ -76,14 +76,14 @@ Conviene construir una sola vez lo que se repite en siete demos y reutilizarlo:
 
 | ID | Historia | Criterios de aceptación | Prioridad | Tamaño |
 | --- | --- | --- | --- | --- |
-| BASE-HU1.1 | Como vendedor de Panacea quiero un banner de demo con enlaces a la web y al diagnóstico gratis, para convertir la reunión en una cita. | Banner visible en todas las rutas; enlaces abren en pestaña nueva; no tapa contenido en 360 px. | Must | S |
+| BASE-HU1.1 | Como vendedor quiero un banner de demo con enlaces a la web y al diagnóstico gratis, para convertir la reunión en una cita. | Banner visible en todas las rutas; enlaces abren en pestaña nueva; no tapa contenido en 360 px. | Must | S |
 | BASE-HU1.2 | Como vendedor quiero datos semilla y un botón "Reiniciar demo", para empezar cada reunión desde cero. | Primera carga siembra datos; reiniciar borra y vuelve a sembrar; confirmación antes de borrar. | Must | S |
 | BASE-HU1.3 | Como vendedor quiero entrar al panel con un botón, sin contraseña, para cambiar de vista rápido. | Botón "Entrar como administrador" lleva a `#/admin`; botón para volver a la vista de cliente. | Must | S |
 | BASE-HU1.4 | Como prospecto quiero ver un WhatsApp que parezca real, para imaginarlo con mis clientes. | Burbujas, hora, doble check, indicador "escribiendo…", envío de imagen/PDF, botones rápidos; al lado, panel "En vivo" con los cambios que provoca cada mensaje. | Must | L |
 | BASE-HU1.5 | Como desarrollador quiero un motor de conversación reutilizable, para no rehacer el bot en cada demo. | Intenciones con sinónimos y tolerancia a tildes y mayúsculas; captura de datos paso a paso; adaptador a `/api/chat` con respaldo al guion. | Must | L |
 | BASE-HU1.6 | Como vendedor quiero un modo Presentación, para mostrar el flujo sin improvisar. | Botón que recorre el flujo principal paso a paso con una nota por paso; se puede pausar, avanzar y salir. | Should | M |
 | BASE-HU1.7 | Como equipo quiero un README con instalación, despliegue y guion de 2 minutos, para que cualquiera de los cuatro socios pueda presentar. | README en español con esas tres secciones. | Must | S |
-| BASE-HU1.8 | Como equipo quiero la demo publicada en su subdominio, para enviarla por enlace después de la reunión. | URL HTTPS funcionando y enlazada desde panacealogic.dev/productos si se decide mostrarla. | Must | S |
+| BASE-HU1.8 | Como equipo quiero la demo publicada en su subdominio, para enviarla por enlace después de la reunión. | URL HTTPS funcionando. | Must | S |
 
 ## Definición de terminado (común)
 

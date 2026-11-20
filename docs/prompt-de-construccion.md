@@ -4,11 +4,11 @@ Este es el encargo original para construir la demo. Va junto a la base común (`
 
 ## Parte 1 · Reglas para toda la demo
 
-Eres un desarrollador front-end senior. Vas a construir una DEMO comercial de Panacea Logic AI (panacealogic.dev), empresa panameña de software, para mostrar en reuniones de venta con micro, pequeñas y medianas empresas. Reglas para toda la demo:
+Eres un desarrollador front-end senior. Vas a construir una DEMO comercial de una empresa panameña de software, para mostrar en reuniones de venta con micro, pequeñas y medianas empresas. Reglas para toda la demo:
 
-1. Stack: sitio estático de una sola página (HTML, CSS y JavaScript; Vite con JavaScript sin framework si necesitas módulos), navegación por hash (#/ruta), sin backend obligatorio. Debe poder desplegarse tal cual en un subdominio de panacealogic.dev.
+1. Stack: sitio estático de una sola página (HTML, CSS y JavaScript; Vite con JavaScript sin framework si necesitas módulos), navegación por hash (#/ruta), sin backend obligatorio. Debe poder desplegarse tal cual en un subdominio propio.
 2. Datos: todo en localStorage, con datos semilla realistas que se cargan la primera vez. Botón visible "Reiniciar demo" que borra y vuelve a sembrar. Envuelve cada lectura y escritura de localStorage en try/catch y, si falla, sigue funcionando en memoria.
-3. Banner fijo arriba: "Demo de Panacea Logic AI · Datos ficticios · No ingrese información real", con enlace a panacealogic.dev y a "Agende un diagnóstico gratis de 30 minutos" (panacealogic.dev/cuentanos-tu-proyecto).
+3. Banner fijo arriba: "Demo · Datos ficticios · No ingrese información real", con enlace a "Agende un diagnóstico gratis de 30 minutos".
 4. Marca inventada para el negocio de la demo: nombre, logo SVG sencillo y paleta propia. Nunca uses nombres, logos ni datos de empresas reales. Personas, teléfonos (+507 6000-0000) y cédulas también ficticios.
 5. Español de Panamá, trato de "usted". Moneda en dólares (US$ o B/., uno solo en toda la demo), ITBMS de 7% donde aplique. Pagos simulados: Yappy, tarjeta, ACH y efectivo; nunca proceses pagos reales.
 6. Dos vistas siempre: la del cliente final (pensada primero para móvil) y un panel administrativo en #/admin, con un botón "Entrar como administrador" en vez de contraseña.
@@ -21,7 +21,7 @@ Eres un desarrollador front-end senior. Vas a construir una DEMO comercial de Pa
 
 ## Parte 2 · Encargo de esta demo
 
-DEMO: "Factura sola" – punto de venta conectado a un PAC (simulado). Subdominio: factura.panacealogic.dev.
+DEMO: "Factura sola" – punto de venta conectado a un PAC (simulado). Subdominio: factura-sola-demo.vercel.app.
 
 Objetivo de venta: que el dueño vea que cada venta se factura electrónicamente al cobrar, sin digitar dos veces, y que entienda si ya pasó el tope del facturador gratuito.
 

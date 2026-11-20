@@ -1,8 +1,8 @@
-# Factura sola · Demo de Panacea Logic AI
+# Factura sola · Demo
 
 Punto de venta conectado a un PAC **simulado**: cada venta se factura electrónicamente al cobrar, sin digitar dos veces, y el dueño ve al instante si ya pasó el tope del facturador gratuito de la DGI.
 
-- Publicada en https://factura.panacealogic.dev (Vercel; también en https://factura-sola-demo.vercel.app). El DNS está en name.com: CNAME `factura` hacia el valor que da Vercel
+- Publicada en https://factura-sola-demo.vercel.app (Vercel; también en https://factura-sola-demo.vercel.app). El DNS está en name.com: CNAME `factura` hacia el valor que da Vercel
 - Código: repositorio privado `dany2509D/factura-sola-demo` en GitHub
 - Negocios ficticios (con selector): Ferretería El Tornillo (mostrador), Café La Ceiba (restaurante) y Tienda Brisa (tienda en línea)
 - Es un sitio estático: HTML, CSS y JavaScript sin build, sin dependencias y sin backend. Todo vive en el navegador (`localStorage`, con respaldo en memoria).
@@ -24,7 +24,7 @@ También sirve cualquier servidor estático apuntando a la carpeta `public/`. Lo
 ## Cómo desplegarlo
 
 1. Publique la carpeta **`public/`** tal cual en cualquier hosting estático (no hay paso de compilación ni variables de entorno). En Vercel ya está resuelto con `vercel.json` (`outputDirectory: "public"`, sin build): `npx vercel deploy --prod` publica solo `public/`; `docs/`, `tests/` y este README no se sirven.
-2. Apunte el subdominio `factura.panacealogic.dev` al hosting y active HTTPS (lo da el hosting). Ya hecho: dominio agregado al proyecto de Vercel y CNAME creado en name.com.
+2. Apunte el subdominio `factura-sola-demo.vercel.app` al hosting y active HTTPS (lo da el hosting). Ya hecho: dominio agregado al proyecto de Vercel y CNAME creado en name.com.
 3. Navegación por hash (`#/ruta`): no necesita reglas de reescritura.
 
 Esta demo **no usa IA ni el endpoint `/api/chat`**: no tiene chat. Por eso no hay función serverless ni clave de API.
@@ -62,7 +62,7 @@ Atajo: el botón **Presentación** (arriba) recorre estos pasos solo, con una no
 | 13 Numeración | Cada punto de facturación (PF1, PF2, PF3, WEB) lleva su propia serie por factura, nota de crédito y nota de débito, sin saltos; en listas y comprobantes el número va con su tipo (`FAC · PF1-000139`, `NC · PF1-000002`) |
 | 14 Actividad en vivo | Interruptor y frecuencia (15 s a 5 min, por defecto 2 min) en los controles de la demo; apagada por defecto, la presentación la enciende y la apaga |
 | 15 Teléfono de WhatsApp | Campo opcional en el cliente con RUC; si falta al pulsar "WhatsApp", se pide en ese momento y se guarda en el documento |
-| 16 Contacto | La barra superior abre WhatsApp +507 6663-2666 con el mensaje ya escrito; el formulario de panacealogic.dev (`?demo=factura`) queda como alternativa |
+| 16 Contacto | La barra superior abre WhatsApp +507 6663-2666 con el mensaje ya escrito |
 | 17 Modo restaurante | **Pendiente a propósito** (mesas, propina y división de cuenta para La Ceiba): se hace cuando haya reunión con un restaurante |
 
 **Datos semilla** (por negocio): 30 productos, 60 ventas autorizadas del mes en curso, 2 rechazos (uno ya corregido y otro abierto), 1 nota de crédito y, para que el filtro por mes tenga qué mostrar, dos meses anteriores más livianos. Cada negocio arranca en un estado distinto del medidor: El Tornillo en verde, La Ceiba en amarillo y Brisa en rojo. Las fechas son relativas a hoy (hora de Panamá). "Reiniciar demo" vuelve exactamente a este estado.
